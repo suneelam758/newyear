@@ -1,0 +1,156 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    * {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+  font-size: 17px;
+  color: white;
+}
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+}
+#content {
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+  animation: hhh 10s linear infinite;
+}
+#box{
+    position: fixed;
+    display: flex;
+    margin-left: 20%;
+}
+#page{
+    
+    background: rgba(0, 0, 0, 0.8); 
+    margin-top: 200px;
+    height: 150px;
+    color: #f1f1f1;
+    width: 200px;
+    padding: 20px;
+    text-align: center;
+    font-size: 50px;
+
+}
+#page1{
+    background: rgba(0, 0, 0, 0.8); 
+    margin-top: 200px;
+    height: 150px;
+    color: #f1f1f1;
+    width: 200px;
+    margin-left: 50px;
+    padding: 20px;
+    text-align: center;
+    font-size: 50px;
+
+}
+#page2{
+    background: rgba(0, 0, 0, 0.8); 
+    margin-top: 200px;
+    height: 150px;
+    color: #f1f1f1;
+    width: 200px;
+    margin-left: 50px;
+    padding: 20px;
+    text-align: center;
+    font-size: 50px;
+
+}
+#page3{
+    background: rgba(0, 0, 0, 0.8); 
+    margin-top: 200px;
+    height: 150px;
+    color: #f1f1f1;
+    width: 200px;
+    margin-left: 50px;
+    padding: 20px;
+    text-align: center;
+    font-size: 50px;
+
+}
+#hhh{
+    text-align: center;
+}
+@keyframes hhh{
+    10%{color: teal;}
+    20%{color: rgb(42, 19, 148);}
+    30%{color: rgb(106, 17, 109);}
+    40%{color: rgb(8, 243, 8);}
+    50%{color: rgb(240, 93, 9);}
+    60%{color: rgb(240, 10, 10);}
+    70%{color: rgb(70, 10, 235);}
+    80%{color: rgb(48, 3, 10);}
+    90%{color: rgb(9, 255, 214);}
+    100%{color: rgb(251, 255, 6);}
+}
+    </style>
+</head>
+<body onload="aa()">
+    <video autoplay muted loop id="myVideo">
+        <source src="giphy.mp4" type="video/mp4">
+      </video>
+      <div id="box">
+      <section id="page"></section>
+      <section id="page1"></section>
+      <section id="page2"></section>
+      <section id="page3"></section>
+    </div>
+      <div id="content">
+        <h1 id="hhh">NEW YEAR CLOCK</h1>
+      </div>
+      <script>
+          var x = document.getElementById("page");
+          var y = document.getElementById("page1");
+          var z = document.getElementById("page2");
+          var w = document.getElementById("page3");
+          var con = document.getElementById("content");
+      function aa()
+      {
+        var d = new Date();
+        var n = d.getDate();
+        x.innerHTML = "date"+"<br>"+n;
+        var h = new Date();
+        var m = h.getHours();
+        y.innerHTML ="Hour"+"<br>"+ m;
+        var t = new Date();
+        var p = t.getMinutes();
+        z.innerHTML ="Min"+"<br>"+ p;
+        var s = new Date();
+        var o = s.getSeconds();
+        w.innerHTML ="Second"+"<br>"+ o;
+      setInterval('aa()',1000);
+      if(w.innerHTML =="Second"+"<br>"+ 59 && x.innerHTML == "date"+"<br>"+31 && y.innerHTML =="Hour"+"<br>"+ 23 && z.innerHTML =="Min"+"<br>"+ 59){
+          x.style.display="none";
+          y.style.display="none";
+          z.style.display="none";
+          w.style.display="none";
+          con.style.marginTop="-500px";
+          con.style.fontSize="55px";
+          document.getElementById("hhh").innerHTML="Happy New Year 2020";
+      }
+      else{
+            con.style.display="block";
+      }
+      }
+      
+      </script>
+      
+</body>
+</html>
